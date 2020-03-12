@@ -1,0 +1,79 @@
+/* 自定义表格的样式 */
+/* 修改浏览器 默认滚动条样式 开始 ------------------- */
+/* style of scrollbar */
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 8px;
+  background-color: #d6d5dd;
+  border-radius: 10px;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 8px #d6d5dd;
+  border-radius: 10px;
+  background-color: #d6d5dd;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 8px #3650cd;
+  background-color: #3650cd;
+}
+/* 修改浏览器 默认滚动条样式 结束 ------------------- */
+
+/* table {
+    position: relative;
+} */
+.count {
+    position: relative;
+    width: 1000px;
+    margin: 50px auto;
+    overflow: auto; 
+    height: 400px;
+    transform: translate(0,0);
+}
+table thead tr td,
+table tbody tr td {
+    /* border-left: 1px solid #ccc; */
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 31px;
+    line-height: 30px;
+    padding: 0 8px;
+    color: #9692a3;   
+    font-size: 12px;
+}
+
+table tbody tr td {
+    border-top: none;
+    color: #353648;   
+}
+table thead tr td:first-of-type,
+table tbody tr td:first-of-type {
+    border-left: 1px solid #ccc;
+}
+table tbody tr td>input {
+    width: 100%;
+    height: 28px;
+    border: none;
+    outline: none;
+    color: #353648;  
+    font-size: 14px; 
+}
+/* 编辑的input */
+.editactive {
+    border: 1px solid #3650cd;
+    height: 27px !important;
+}
+.hidTable {
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  background-color: #fff;
+}

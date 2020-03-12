@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <!-- <link rel="stylesheet" href="./pageloader.css"> -->
+    <link rel="stylesheet" href="./tablePlugin.css">
+</head>
+<body>
+    <div style="width: 1000px;">
+        <div class="count">
+            <table id="storetable" cellspacing="0" cellpadding="0">
+    
+            </table>
+        </div> 
+        
+    </div>
+    
+</body>
+<script src="./tablePlugin.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<!-- <script src="./definePageloader.js"></script>
+<script src="./pageloader.js"></script> -->
+<script>
+	
+    var data = [
+        {'startTime':'1起始时间','endTime': '1结束时间','comdepar':'1公司部门','heightPosi':'1最高职位','engineering':'1工程专业','busarea':'1业务领域'},
+        {'startTime':'2起始时间','endTime': '2结束时间','comdepar':'','heightPosi':'2最高职位','engineering':'2工程专业','busarea':'2业务领域'},
+        {'startTime':'3起始时间','endTime': '3结束时间','comdepar':'3公司部门','heightPosi':'3最高职位','engineering':'3工程专业','busarea':'3业务领域'},
+        {'startTime':'4起始时间','endTime': '4结束时间','comdepar':'4公司部门','heightPosi':'4最高职位','engineering':'4工程专业','busarea':'4业务领域'},
+        {'startTime':'5起始时间','endTime': '5结束时间','comdepar':'5公司部门','heightPosi':'5最高职位','engineering':'5工程专业','busarea':'5业务领域'},
+
+    ]
+    new tablePlugin({
+        el: '#storetable',
+        data: data,
+        columns: [
+            {field:'startTime',title:`起始时间<i style="color: red">*<i>`,width:100,sortable:true,align: 'center',},
+            {field:'endTime',title:'结束时间',width:200,sortable:true,align: 'center',},
+            {field:'comdepar',title:'公司部门',width:200,sortable:true,align: 'left',editor: 'text'},
+            {field:'heightPosi',title:'最高职位',width:100,sortable:true,align: 'left',},
+            {field:'engineering',title:'工程专业',width:400,sortable:true,align: 'left',},
+            {field:'busarea',title:'业务领域',width:800,sortable:true,align: 'left',},
+        ],
+        fixedcol: ["startTime","endTime"],
+        editFocusInputHun: function(tablePluginThis,e){
+            e.target.parentNode.classList.add('editactive');
+        },
+        editBlurInputHun: function(tablePluginThis,e){
+            e.target.parentNode.classList.remove('editactive')
+        },
+       
+    });
+</script>
+</html>
